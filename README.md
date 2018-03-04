@@ -35,10 +35,17 @@
 ### List of Routes
 - http://localhost:5000/ -> index.html
 - http://localhost:5000/names -> name_example.html
-- http://localhost:5000/your_recipe/<string:name>/<string:ing1>/<string:ing2>/<string:ing3>/<string:q>/<string:other> -> your_recipe.html
+- http://<span></span>localhost:5000/<string:name>/<string:ing1>/<string:ing2>/<string:ing3>/<string:q>/<string:other> -> your_recipe.html   *This route is not directly accessible to a user unless the user knows to input the parameters in the url. This route is a redirect from the main form but the functionality is similar to that of the specific_user route, which a user can directly access by entering that url.
 - http://localhost:5000/recipes -> all_recipes.html
 - http://localhost:5000/specific_user -> specific_user_form.html and specific_user_info.html
+- http://localhost:5000/nutrition_form -> nutrition_checker.html
 - http://localhost:5000/nutrition_recipe -> nutrition_recipe.html
 - http://localhost:5000/most_servings -> most_servings.html
-- http://localhost:5000/highest_rating -> highest_ratings.html
+- http://localhost:5000/highest_rating -> highest_rating.html
+
+### Other Templates
+- 404.html -> renders when 404 error is hit
+- 500.html -> renders when 500 error is hit
+- base.html -> base html that other templates inherit from
+- not_found.html -> associated with specific_user; renders when the user searched for does not exist
 
