@@ -1,11 +1,14 @@
-
-#### Documentation Requirements (so we can grade the assignments)
-* Create a `README.md` file for your app that includes the full list of requirements from this page. The ones you have completed should be bolded. (You bold things in Markdown by using two asterisks, like this: `**This text would be bold** and this text would not be`)
-* The `README.md` file should include a list of all of the routes that exist in the app and the names of the templates each one should render (e.g. `/form` -> `form.html`, like [the list we provided in the instructions for HW2](https://www.dropbox.com/s/3a83ykoz79tqn8r/Screenshot%202018-02-15%2013.27.52.png?dl=0)).
-* The `README.md` file should contain at least 1 line of description of what your app is about or should do.
+#### Description
+This app is a recipe finder. It utilizes the Yummly API and allows a user to search for a recipe for a food item, for example, chicken. It also allows the user to specify up to 3 ingredients they want to use if they want. The app allows the user to view what recipes other users found and also find the recipe with the highest yield and rating. Users can also specify different nutrition measures and find the highest or lowest found recipes of those measures.  
+The app will continue to add recipes to a user but duplicate users with the same name will not be saved in the database. It will also not add duplicate recipe entries but allow other users to search for them.     
+There are five databases:  
+- Information -> Contains extra information about the recipe including time, yield, and rating
+- Names -> Contains all users; has a one-to-many relationship with Recipe
+- Nutrition -> Contains nutrition information on the recipes such as calories, fat, etc.
+- OtherFoundR -> Contains recipe and original/new user information if the recipe was previously found by another user
+- Recipe -> Contains recipe information such as url, ingredients, and the first user to find the recipe
 
 #### Code Requirements
-
 
 - **Ensure that the `SI364midterm.py` file has all the setup (`app.config` values, import statements, code to run the app if that file is run, etc) necessary to run the Flask application, and the application runs correctly on `http://localhost:5000` (and the other routes you set up)**  
 - **Add navigation in `base.html` with links (using `a href` tags) that lead to every other viewable page in the application. (e.g. in the lecture examples from the Feb 9 lecture, [like this](https://www.dropbox.com/s/hjcls4cfdkqwy84/Screenshot%202018-02-15%2013.26.32.png?dl=0) )**  
@@ -35,7 +38,7 @@
 ### List of Routes
 - http://localhost:5000/ -> index.html
 - http://localhost:5000/names -> name_example.html
-- http://<span></span>localhost:5000/<string:name>/<string:ing1>/<string:ing2>/<string:ing3>/<string:q>/<string:other> -> your_recipe.html   *This route is not directly accessible to a user unless the user knows to input the parameters in the url. This route is a redirect from the main form but the functionality is similar to that of the specific_user route, which a user can directly access by entering that url.
+- http://<span></span>localhost:5000/<string:name>/<string:ing1>/<string:ing2>/<string:ing3>/<string:q>/<string:other> -> your_recipe.html  *This route is not directly accessible to a user unless the user knows to input the parameters in the url. This route is a redirect from the main form but the functionality is similar to that of the specific_user route, which a user can directly access by entering that url.
 - http://localhost:5000/recipes -> all_recipes.html
 - http://localhost:5000/specific_user -> specific_user_form.html and specific_user_info.html
 - http://localhost:5000/nutrition_form -> nutrition_checker.html
