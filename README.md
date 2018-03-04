@@ -32,5 +32,13 @@
 
 * **(100 points) Write code in your Python file that will allow a user to submit duplicate data to a form, but will *not* save duplicate data (like the same user should not be able to submit the exact same tweet text for HW3).**  
 
-
+### List of Routes
+- http://localhost:5000/ -> index.html
+- http://localhost:5000/names -> name_example.html
+- http://localhost:5000/your_recipe/<string:name>/<string:ing1>/<string:ing2>/<string:ing3>/<string:q>/<string:other> -> your_recipe.html
+- http://localhost:5000/recipes -> all_recipes.html
+- http://localhost:5000/specific_user -> specific_user_form.html and specific_user_info.html
+- http://localhost:5000/nutrition_recipe -> nutrition_recipe.html
+- http://localhost:5000/most_servings -> most_servings.html
+- http://localhost:5000/highest_rating -> highest_ratings.html
 
