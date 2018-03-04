@@ -7,14 +7,14 @@
 #### Code Requirements
 
 
-**- Ensure that the `SI364midterm.py` file has all the setup (`app.config` values, import statements, code to run the app if that file is run, etc) necessary to run the Flask application, and the application runs correctly on `http://localhost:5000` (and the other routes you set up)**  
-**- Add navigation in `base.html` with links (using `a href` tags) that lead to every other viewable page in the application. (e.g. in the lecture examples from the Feb 9 lecture, [like this](https://www.dropbox.com/s/hjcls4cfdkqwy84/Screenshot%202018-02-15%2013.26.32.png?dl=0) )**  
-- Ensure that all templates in the application inherit (using template inheritance, with `extends`) from `base.html` and include at least one additional `block`.  
-- Include at least 2 additional template `.html` files we did not provide.  
-- At least one additional template with a Jinja template for loop and at least one additional template with a Jinja template conditional.  
-    - These could be in the same template, and could be 1 of the 2 additional template files.  
-- At least one errorhandler for a 404 error and a corresponding template.  
-- At least one request to a REST API that is based on data submitted in a WTForm.  
+- **Ensure that the `SI364midterm.py` file has all the setup (`app.config` values, import statements, code to run the app if that file is run, etc) necessary to run the Flask application, and the application runs correctly on `http://localhost:5000` (and the other routes you set up)**  
+- **Add navigation in `base.html` with links (using `a href` tags) that lead to every other viewable page in the application. (e.g. in the lecture examples from the Feb 9 lecture, [like this](https://www.dropbox.com/s/hjcls4cfdkqwy84/Screenshot%202018-02-15%2013.26.32.png?dl=0) )**  
+- **Ensure that all templates in the application inherit (using template inheritance, with `extends`) from `base.html` and include at least one additional `block`.**  
+- **Include at least 2 additional template `.html` files we did not provide.**  
+- **At least one additional template with a Jinja template for loop and at least one additional template with a Jinja template conditional.  
+    - These could be in the same template, and could be 1 of the 2 additional template files.**     
+- **At least one errorhandler for a 404 error and a corresponding template.**    
+- **At least one request to a REST API that is based on data submitted in a WTForm.**    
 - At least one additional (not provided) WTForm that sends data with a `GET` request to a new page.  
 - At least one additional (not provided) WTForm that sends data with a `POST` request to the *same* page.  
 - At least one custom validator for a field in a WTForm.  
