@@ -51,5 +51,5 @@ To run, please enter the submitted API key and IDs in app_key_id.py
 - 404.html -> renders when 404 error is hit
 - 500.html -> renders when 500 error is hit
 - base.html -> base html that other templates inherit from
-- not_found.html -> associated with specific_user; renders when the user searched for does not exist
+- not_found.html -> renders when no recipe is found
 
