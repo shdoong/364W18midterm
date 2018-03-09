@@ -38,7 +38,7 @@ There are five databases:
 ### List of Routes
 - http://localhost:5000/ -> index.html
 - http://localhost:5000/names -> name_example.html
-- http://<span></span>localhost:5000/<string:name>/<string:ing1>/<string:ing2>/<string:ing3>/<string:q>/<string:other> -> your_recipe.html  *This route is not directly accessible to a user unless the user knows to input the parameters in the url. This route is a redirect from the main form but the functionality is similar to that of the specific_user route, which a user can directly access by entering that url.
+- http://<span></span>localhost:5000/your_recipe/<string:name>/<string:ing1>/<string:ing2>/<string:ing3>/<string:q>/<string:other> -> your_recipe.html  *This route is not directly accessible to a user unless the user knows to input the parameters in the url. This route is a redirect from the main form but the functionality is similar to that of the specific_user route, which a user can directly access by entering that url.
 - http://localhost:5000/recipes -> all_recipes.html
 - http://localhost:5000/specific_user -> specific_user_form.html and specific_user_info.html
 - http://localhost:5000/nutrition_form -> nutrition_checker.html
