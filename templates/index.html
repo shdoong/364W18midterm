@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Yummly Recipe Finder</h2>
+Welcome to the Yummly Recipe Finder! Here you can search for recipes or see what recipes other people have found. Fill out the form to get started. <br><i>**Please note after submitting, you may have to wait for several seconds as your recipes are being found**</i><br><br>
+<form  method="POST">
+    {{ form.name.label() }}{{ form.name() }}<br>
+    {{ form.r.label() }}{{ form.r() }}<br><br>
+    You can specify up to three ingredients to use! If you have no specifications, leave blank.<br>
+	{{ form.ing1.label() }}{{ form.ing1() }}<br>
+	{{ form.ing2.label() }}{{ form.ing2() }}<br>
+	{{ form.ing3.label() }}{{ form.ing3() }}<br>
+	{{ form.submit() }}
+    {{ form.hidden_tag() }}
+</form>
+<div>
+
+{% for dc in get_flashed_messages() %}
+	{% if dc|length > 0 %}
+
+	<b>Error!</b><br>
+	    {% for key in dc %}
+	        *<i> {{ dc[key][0] }}</i> <br>
+	    {% endfor %}
+	 {% endif %}
+
+	{% endfor %}
+{% endblock %}

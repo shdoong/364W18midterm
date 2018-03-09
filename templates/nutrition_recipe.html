@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Highest/Lowest Recipe by Nutrition Value</h2>
+
+The <strong>{{hl}} {{measure}}</strong> recipe saved is <strong>{{n}}</strong><br>
+<a href = {{url}}>Link to Recipe</a><br><br>
+
+<a href="{{ url_for('nutrition_checker')}}">Find another recipe.</a>
+
+
+{% endblock %}

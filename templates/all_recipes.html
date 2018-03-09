@@ -1,0 +1,16 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>All Recipes</h1>
+
+{% for l in info %}
+	<strong>Recipe: </strong> {{l[0]}} <br>
+	<strong>Ingredients: </strong> {{l[1][1:-1].replace('","', ' | ').replace('"','').replace(', ', ';').replace(',', ' | ').replace(';', ', ')}}<br>
+	<a href = {{l[2]}}>Link to Recipe</a><br><br>
+{% endfor %}
+
+
+
+{% endblock %}

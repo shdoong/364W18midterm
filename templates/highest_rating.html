@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Cooking to Impress? Here are the top rated found recipes!</h2>
+<ul>
+{% for re in r %}
+	{% for rf in recipe %}
+		{% if re[2] == rf[2] %}
+			<li><h3>{{rf[0]}}</h3></li>
+			<b>Servings: </b> {{re[0]}} <br>
+			<b>Total time: </b>{{re[1]}} <br>
+			<b>Rating: </b>{{re[3]}} <br>
+			<a href = "{{rf[1]}}">Link to Recipe</a>
+		{% endif %}
+		{% endfor %}
+	{% endfor %}
+</ul>
+{% endblock %}

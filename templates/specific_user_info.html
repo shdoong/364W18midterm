@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Now Viewing {{name}}'s Found Recipes</h2>
+
+{% for r in recipes %}
+	<li>{{r[0]}} | <a href = {{r[1]}}>Link to Recipe</a></li> 
+{% endfor %}
+{% for r in recipes2 %}
+	<li>{{r[2]}} | <a href = {{r[1]}}>Link to Recipe</a></li> 
+{% endfor %}
+
+
+{% endblock %}
+

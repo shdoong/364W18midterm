@@ -1,0 +1,15 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Nutrition Recipe Finder</h2>
+<form action = "{{ url_for('HL_nutrition')}}" method="GET">
+    {{ form.measures.label() }}{{ form.measures() }}<br>
+    {{ form.hl.label() }}{{ form.hl() }} <br>
+	{{ form.submit() }}
+    {{ form.hidden_tag() }}
+</form>
+
+
+{% endblock %}

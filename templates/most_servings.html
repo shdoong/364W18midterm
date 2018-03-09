@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Feeding an army? Here's a found recipe you can whip up to serve everyone!</h2>
+
+<h3><b>{{recip}}</b></h3>
+<b>Servings: </b> {{serv}} <br>
+<b>Total time: </b>{{tottime}} <br>
+<b>Rating: </b>{{rating}} <br>
+<a href = "{{url}}">Link to recipe!</a>
+{% endblock %}

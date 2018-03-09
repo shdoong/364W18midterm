@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form  method="POST">
+    {{ form.user.label() }} {{form.user()}}
+	{{ form.submit() }}
+    {{ form.hidden_tag() }}
+</form>
+
+{% for dc in get_flashed_messages() %}
+    {% for key in dc %}
+        *<i> {{ dc[key][0] }}</i> <br>
+    {% endfor %}
+ {% endfor %}
+{% endblock %}

@@ -1,0 +1,65 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>User Recipes</h2>
+<h3>Hello {{name}}! <br></h3>
+
+{% if other == "None" %}
+	The recipe you just found for {{q}} is <strong>{{recipes[-1][0]}}</strong> which includes your specified ingredients:
+{% else %}
+	The recipe you just found for {{q}} was originally found by <i>{{recipes_other[-1][0]}}.</i><br>
+	The recipe is <strong>{{recipes_other[-1][2]}}</strong> and includes your specified ingredients:
+
+{% endif %}
+
+<ul>
+{% if ing1 != "None" %}
+    <li>{{ing1}}</li>
+{% endif %}
+{% if ing2 != "None" %}
+    <li>{{ing2}}</li>
+{% endif %}
+{% if ing3 != "None" %}
+    <li>{{ing3}}</li>
+{% endif %}
+{% if ing1 == ing2 == ing3 == "None" %}
+    No ingredients specified!
+{% endif %}
+</ul>
+
+{% if other == "None" %}
+<a href = {{recipes[-1][1]}}>Link to Recipe</a><br><br>
+
+{% else %}
+<a href = {{recipes_other[-1][1]}}>Link to Recipe</a><br><br>
+
+{% endif %}
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<br>
+Your previously saved recipes are: <br>
+<ul>
+{% if other != "Yes" %}
+	{% for r in recipes[:-1] %}
+		<li>{{r[0]}} | <a href = {{r[1]}}>Link to Recipe</a></li> 
+	{% endfor %}
+{% else %}
+	{% for r in recipes %}
+		<li>{{r[0]}} | <a href = {{r[1]}}>Link to Recipe</a></li> 
+	{% endfor %}
+{% endif %}
+</ul>
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<br>
+Your previously saved recipes originally found by others are: <br>
+<ul>
+{% if other == "Yes" %}
+	{% for r in recipes_other[:-1] %}
+		<li>{{r[2]}} originally found by <i>{{r[0]}}</i> | <a href = {{r[1]}}>Link to Recipe</a></li> 
+	{% endfor %}
+{%else%}
+	{% for r in recipes_other %}
+			<li>{{r[2]}} originally found by <i>{{r[0]}}</i> | <a href = {{r[1]}}>Link to Recipe</a></li> 
+		{% endfor %}
+{% endif %}
+</ul>
+{% endblock %}
