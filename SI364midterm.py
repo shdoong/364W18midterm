@@ -29,7 +29,7 @@ app.use_reloader = True
 
 ## All app.config values
 app.config['SECRET_KEY'] = 'hard to guess string'
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://localhost:5432/shdoong364midterm" 
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://postgres:Peijia.14@localhost:5432/shdoong364midterm" 
 app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
