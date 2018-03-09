@@ -8,6 +8,7 @@ There are five databases:
 - OtherFoundR -> Contains recipe and original/new user information if the recipe was previously found by another user
 - Recipe -> Contains recipe information such as url, ingredients, and the first user to find the recipe
 
+To run, please enter the submitted API key and IDs in app_key_id.py
 #### Code Requirements
 
 - **Ensure that the `SI364midterm.py` file has all the setup (`app.config` values, import statements, code to run the app if that file is run, etc) necessary to run the Flask application, and the application runs correctly on `http://localhost:5000` (and the other routes you set up)**  
