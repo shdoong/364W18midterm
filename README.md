@@ -33,8 +33,11 @@ To run, please enter the submitted API key and IDs in app_key_id.py
 ### Additional Requirements for an additional 200 points (to reach 100%) -- an app with extra functionality!  
 
 * **(100 points) Include an *additional* model class (to make at least 4 total in the application) with at least 3 columns. Save data to it AND query data from it; use the data you query in a view-function, and as a result of querying that data, something should show up in a view. (The data itself should show up, OR the result of a request made with the data should show up.)**  
+  -Model classes: Names, Recipe, Information, Nutrition, OtherFoundR
 
 * **(100 points) Write code in your Python file that will allow a user to submit duplicate data to a form, but will *not* save duplicate data (like the same user should not be able to submit the exact same tweet text for HW3).**  
+  -get_or_create_user will not save duplicate names in the Names database
+  -get_or_create_recipe will not save duplicate recipes in the Recipe database
 
 ### List of Routes
 - http://localhost:5000/ -> index.html
