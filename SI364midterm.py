@@ -4,9 +4,9 @@
 ###############################
 
 #-*- coding: utf-8 -*-
-import sys
-import codecs
-sys.stdout = codecs.getwriter('utf8')(sys.stdout)
+# import sys
+# import codecs
+# sys.stdout = codecs.getwriter('utf8')(sys.stdout)
 
 ## Import statements
 import json
@@ -29,7 +29,7 @@ app.use_reloader = True
 
 ## All app.config values
 app.config['SECRET_KEY'] = 'hard to guess string'
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://postgres:Peijia.14@localhost:5432/shdoong364midterm" 
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://localhost:5432/shdoong364midterm" 
 app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -51,9 +51,11 @@ def getInfo(q, ct, ing1, ing2, ing3):
     if ct == 1:
         response = requests.get(BASE_URL, params={'_app_id': APP_ID, '_app_key': API_KEY, 'q':q, 'maxResult':1, 'allowedIngredient[]':ing1})
     if ct == 2:
-        response = requests.get(BASE_URL, params={'_app_id': APP_ID, '_app_key': API_KEY, 'q':q, 'maxResult':1, 'allowedIngredient[]':ing1, 'allowedIngredient[]':ing2})
+        link = 'http://api.yummly.com/v1/api/recipes?_app_id='+APP_ID+'&_app_key='+API_KEY+'&q='+q+'&maxResult=1&allowedIngredient[]='+ing1+'&allowedIngredient[]='+ing2
+        response = requests.get(link)      
     if ct == 3:
-        response = requests.get(BASE_URL, params={'_app_id': APP_ID, '_app_key': API_KEY, 'q':q, 'maxResult':1, 'allowedIngredient[]':ing1, 'allowedIngredient[]':ing2, 'allowedIngredient[]':ing3})                
+        link = 'http://api.yummly.com/v1/api/recipes?_app_id='+APP_ID+'&_app_key='+API_KEY+'&q='+q+'&maxResult=1&allowedIngredient[]='+ing1+'&allowedIngredient[]='+ing2+'&allowedIngredient[]='+ing3
+        response = requests.get(link)             
     r_text = json.loads(response.text)['matches']
     return r_text
 
@@ -64,7 +66,7 @@ def getRecipeName(q, ct, ing1, ing2, ing3):
 def getID(q, ct, ing1, ing2, ing3):
     data = getInfo(q, ct, ing1, ing2, ing3)
     for x in data:
-        id1= x['id']
+        id1 = x['id']
     return(id1)
 
 def getRecipeInfo(q, ct, ing1, ing2, ing3):
