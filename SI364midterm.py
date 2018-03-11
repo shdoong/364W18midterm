@@ -4,9 +4,9 @@
 ###############################
 
 #-*- coding: utf-8 -*-
-# import sys
-# import codecs
-# sys.stdout = codecs.getwriter('utf8')(sys.stdout)
+import sys
+import codecs
+sys.stdout = codecs.getwriter('utf8')(sys.stdout)
 
 ## Import statements
 import json
@@ -113,7 +113,7 @@ def get_or_create_recipe(q, user, ct, ing1, ing2, ing3):
         return recipe
     ##If another user had already found the same recipe, add to the OtherFoundR database and make a note that it is in that database for later use
     elif recipe_gen:
-        o = OtherFoundR.query.filter_by(recipe = name).first()
+        o = OtherFoundR.query.filter_by(recipe = name, new_user = user.id).first()
         if not o:
             others = OtherFoundR(recipe = recipe_gen.label, original_user = recipe_gen.name_id, new_user = user.id, recipe_id = recipe_gen.id, url = url)
             db.session.add(others)
@@ -218,7 +218,7 @@ class OtherFoundR(db.Model):
     url = db.Column(db.String())
 
     def __repr__(self):
-        return "{}, {}, {}, {}".format(self.id, self.recipe, self.name_id, self.recipe_id)
+        return "{}, {}, {}, {}, {}".format(self.id, self.recipe, self.original_user, self.new_user, self.recipe_id)
 ###################
 ###### FORMS ######
 ###################
